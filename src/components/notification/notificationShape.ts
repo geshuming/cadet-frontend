@@ -1,18 +1,13 @@
-export interface Notification {
-    assessmentId?: number;
+export interface AcademyNotification {
+    assessment_id?: number;
     id: number;
-    questionId?: number;
+    question_id?: number;
     read: boolean;
-    role: UserType;
-    submissionId?: number;
+    submission_id?: number;
     type: NotificationType;
-    user: {
-        name: string;
-        id: number;
-    };
 }
 
-export enum NotificationTypes {
+export enum AcademyNotificationTypes {
     new = 'new',
     deadline = 'deadline',
     autograded = 'autograded',
@@ -20,12 +15,4 @@ export enum NotificationTypes {
     submitted = 'submitted'
   }
 
-export type NotificationType = keyof typeof NotificationTypes;
-
-export enum UserTypes {
-    admin = 'admin',
-    staff = 'staff',
-    student = 'student'
-  }
-
-export type UserType = keyof typeof UserTypes;
+export type AcademyNotificationType = keyof typeof AcademyNotificationTypes;
