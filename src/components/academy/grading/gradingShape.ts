@@ -1,6 +1,8 @@
+import { Notification } from '../../../components/notification/notificationShape';
 import {
   AssessmentCategory,
   AutogradingResult,
+  GradingStatus,
   IQuestion,
   ITestcase,
   MCQChoice
@@ -28,7 +30,14 @@ export type GradingOverview = {
   submissionId: number;
   submissionStatus: string;
   groupName: string;
+  gradingStatus: GradingStatus;
+  questionCount: number;
+  gradedCount: number;
 };
+
+export type GradingOverviewWithNotifications = {
+  notifications: Notification[];
+} & GradingOverview;
 
 /**
  * The information fetched before
